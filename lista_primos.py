@@ -10,14 +10,15 @@ numero = int(input("Introduzca su numero: "))
 primos = []
 
 # Proceso
-for x in range(2,numero):
+for x in range(2, numero + 1):
     es_primo = True
     for i in range(2, x):
         if x % i == 0:
             es_primo = False
             break
-        if es_primo:
-            primos.append(x)
+    if es_primo:
+        primos.append(x)
 
 # Salidas
-print("Los numeros primos menores a", numero, "son: ", primos)
+texto = ", ".join(map(str,primos))
+print(f"Los numeros menores a {numero} son: {texto}.")
